@@ -3,11 +3,11 @@ import Page from './page.js';
 
 class DashboardPage extends Page {
     get snippetSentryLogo () {return $(text='Snippet Sentry')}
-    get dashboardLink () {return $(<span class="nav-item-title">Dashboard</span>)}
-    get manageUsersLink () {return $(<span class="nav-item-title">Manage Users</span>)}
-    get advFeaturesLink () {return $(<span class="nav-item-title">Advanced Features</span>)}
-    get adminResourcesLink () {return $(<span class="nav-item-title">Admin Resources</span>)}
-    get channelDashboardLink () {return $(<span class="nav-item-title">Channel Dashboard</span>)}
+    get dashboardLink () {return $('aria/Dashboard')}
+    get manageUsersLink () {return $('aria/Manage Users')}
+    get advFeaturesLink () {return $('aria/Advanced Features')}
+    get adminResourcesLink () {return $('aria/Admin Resources')}
+    get channelDashboardLink () {return $('aria/Channel Dashboard')}
 
     async clickDashboardLink() {
         await this.dashboardLink.click();

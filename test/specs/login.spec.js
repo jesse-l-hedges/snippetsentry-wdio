@@ -11,7 +11,7 @@ describe('Login Page Tests', () => {
             expect.stringContaining('You logged into a secure area!'))
     })
 
-    it('login with invalid credentials', async () => {})
-    it('login with missing username', async () => {})
-    it('login with missing password', async () => {})
+    // it('login with invalid credentials', async () => {})
+    // it('login with missing username', async () => {})
+    // it('login with missing password', async () => {})
 })

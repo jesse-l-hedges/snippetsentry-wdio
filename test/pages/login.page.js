@@ -1,28 +1,28 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js';
 
-/**
- * sub page containing specific selectors and methods for a specific page
- */
 class LoginPage extends Page {
-    /**
-     * define selectors using getter methods
-     */
-    get inputUsername () {return $('#input-v-633')}
-    get inputPassword () {return $('#input-v-635')}
-    get btnLogin () {return $('#input-v-635')}
+    // Selectors
+    get inputUsername () {return $('#input-v-102')}
+    get inputPassword () {return $('#input-v-104')}
+    get btnLogin () {return $('aria/LOGIN')}
     get lnkForgotPassword () {return $([href]="/forgot-password")}
     get lnkCreateAccount () {return $([href]="/register")}
-    get incorrectUserPass () {return $([data-testid]="login-error")};
+    get incorrectUserPass () {return $('label.v-label')} // <label data-v-8f9c4d9a="" class="v-label" data-testid="login-error" style="color: red;"><!---->Username or password is incorrect</label>
 
-    /**
-     * a method to encapsule automation code to interact with the page
-     * e.g. to login using username and password
-     */
+    // Methods
     async login (username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+        await this.btnLogin.click();
+    }
+
+    async clickForgotPassword() {
+        await this.lnkForgotPassword.click();
+    }
+
+    async clickCreateAccount() {
+        await this.lnkCreateAccount.click();
     }
 
     /**
